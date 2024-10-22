@@ -11,7 +11,7 @@ int main(void)
 
 	for (digit = 0; digit <= 9; digit++)
 	{
-		putchar(digit + '0'); /* Convert digit to character */
+		putchar(digit + '0');
 	}
 
 	putchar('\n');
