@@ -7,9 +7,14 @@
  */
 int main(void)
 {
-	int n;
+	int digit;
 
-	for (n = 0; n <= 9; n++);
+	for (digit = 0; digit <= 9; digit++)
+	{
+		putchar(digit + '0'); /* Convert digit to character */
+	}
+
+	putchar('\n');
 
 	return (0);
 }
