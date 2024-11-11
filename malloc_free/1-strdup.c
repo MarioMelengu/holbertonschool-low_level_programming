@@ -2,15 +2,22 @@
 #include <stddef.h>
 #include <stdlib.h>
 
- char *_strdup(char *str)
- {
+/**
+ * _strdup - duplicate a string
+ * @str: string to be duplicated.
+ * Return: pointer to the duplicated string, or NULL if insufficient memory
+ * was available.
+ */
+
+char *_strdup(char *str)
+{
 	int size;
 	int i;
-	char* copy;
+	char *copy;
 
 	if (str == NULL)
 		return (NULL);
-	
+
 	i = 0;
 	while (str[i] != '\0')
 		i++;
@@ -24,8 +31,7 @@
 	{
 		copy[i] = str[i];
 	}
-	
+
 	return (copy);
 
- }
- 
+}
