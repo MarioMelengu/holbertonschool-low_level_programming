@@ -7,7 +7,7 @@
  * @age: age of the dog
  * @owner: owner of the dog
  *
- * Description: Define a new type struct dog
+ * Description: Lonfer description
  */
 
 struct dog
