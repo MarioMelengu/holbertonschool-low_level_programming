@@ -1,37 +1,46 @@
 #include "dog.h"
-#include <string.h>
 #include <stdlib.h>
-
 /**
- * new_dog -  function that creates a new dog
+ * new_dog - creates a new dog
  * @name: name of dog
  * @age: age of dog
  * @owner: owner of dog
- *
- * Return: ptr
+ * Return: NULL if function fails
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog_ptr = malloc(sizeof(dog_t));
+	dog_t *my_dog;
+	int i, name_len, owner_len;
 
-	dog_ptr->name = malloc(strlen(name) + 1);
-	dog_ptr->owner = malloc(strlen(owner) + 1);
+	name_len = 0;
+	owner_len = 0;
 
-	if (dog_ptr == NULL)
+	for (i = 0; name[i] != '\0'; i++)
+		name_len++;
+	for (i = 0; owner[i] != '\0'; i++)
+		owner_len++;
+	my_dog = malloc(sizeof(dog_t));
+	if (my_dog == NULL)
 		return (NULL);
-
-
-	if (dog_ptr->name == NULL || dog_ptr->owner == NULL)
+	my_dog->name = malloc(sizeof(char) * (name_len + 1));
+	if (my_dog->name == NULL)
 	{
+		free(my_dog);
 		return (NULL);
 	}
-
-
-
-	dog_ptr->name = name;
-	dog_ptr->age = age;
-	dog_ptr->owner = owner;
-	return (dog_ptr);
-
+	my_dog->owner = malloc(sizeof(char) * (owner_len + 1));
+	if (my_dog->owner == NULL)
+	{
+		free(my_dog->name);
+		free(my_dog);
+		return (NULL);
+	}
+	my_dog->age = age;
+	for (i = 0; name[i] != '\0'; i++)
+		my_dog->name[i] = name[i];
+	my_dog->name[i] = '\0';
+	for (i = 0; owner[i] != '\0'; i++)
+		my_dog->owner[i] = owner[i];
+	my_dog->owner[i] = '\0';
+	return (my_dog);
 }
