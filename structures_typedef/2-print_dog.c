@@ -1,11 +1,10 @@
-#include<stdio.h>
-#include"dog.h"
+#include <stdio.h>
+#include "dog.h"
 
 /**
- * print_dog -entry point,function that prints a struct
- * @d: -points to repective address
+ * print_dog - function that prints a struct
+ * @d: - points to the dog struct
  */
-
 
 void print_dog(struct dog *d)
 {
